@@ -22,6 +22,10 @@ db.once('open', function () {
 app.use(bodyParser.json());
 app.use(upload());
 
+//routes: 
+const posts = require('./routes/posts');
+app.use('/posts', posts);
+
 app.listen(3001, () => {
-    console.log("Server working on Port: 3000");
+    console.log("Server working on : http://localhost:3001/");
 });
