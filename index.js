@@ -1,3 +1,5 @@
+//populate was successfully between the posts and tags and too between the categories 
+
 require('dotenv').config()
 const express = require('express');
 const app = express();
@@ -25,6 +27,10 @@ app.use(upload());
 //routes: 
 const posts = require('./routes/posts');
 app.use('/posts', posts);
+const tags = require('./routes/tags');
+app.use('/tags', tags);
+const categories = require('./routes/categories');
+app.use('/categories', categories);
 
 app.listen(3001, () => {
     console.log("Server working on : http://localhost:3001/");
